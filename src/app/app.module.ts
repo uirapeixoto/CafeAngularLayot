@@ -10,6 +10,10 @@ import { FooterComponent } from './footer/footer.component';
 import { NavmenuComponent } from './navmenu/navmenu.component';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AppRouters } from './app.routes';
+import { DataService } from './data/data.service';
 
 @NgModule({
   declarations: [
@@ -17,15 +21,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HeaderComponent,
     ContentComponent,
     FooterComponent,
-    NavmenuComponent
+    NavmenuComponent,
+    WelcomeComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AppRouters
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

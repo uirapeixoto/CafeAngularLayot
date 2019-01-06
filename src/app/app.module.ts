@@ -9,11 +9,11 @@ import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavmenuComponent } from './navmenu/navmenu.component';
 import { MaterialModule } from './material/material.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRouters } from './app.routes';
 import { DataService } from './data/data.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,8 @@ import { DataService } from './data/data.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule, 
     MaterialModule,
-    FlexLayoutModule,
     AppRouters
   ],
   providers: [DataService],

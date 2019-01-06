@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data/data.service';
-import { Post } from '../interfaces/Post';
-import { Observable } from 'rxjs/Observable';
 import { DataSource } from '@angular/cdk/table';
+import { Observable } from 'rxjs/Observable';
+import { Post } from '../interfaces/Post';
+import { DataService } from '../data/data.service';
+
 
 
 @Component({

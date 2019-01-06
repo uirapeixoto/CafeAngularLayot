@@ -26,12 +26,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-<<<<<<< HEAD
-
 ## Layout
 Criando belos aplicativos com material angular https://auth0.com/blog/creating-beautiful-apps-with-angular-material/
-=======
-##Layout
 
-https://auth0.com/blog/creating-beautiful-apps-with-angular-material/
->>>>>>> 6d10555089b9823350d444b6eb9e70e9a3150504

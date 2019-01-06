@@ -28,4 +28,3 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Layout
 Criando belos aplicativos com material angular https://auth0.com/blog/creating-beautiful-apps-with-angular-material/
-

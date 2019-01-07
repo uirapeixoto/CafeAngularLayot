@@ -6,7 +6,7 @@
     <mat-menu #menu="matMenu" [overlapTrigger]="false">
       <button mat-menu-item>
         <mat-icon>home</mat-icon>
-        <span>Home</span>
+        <span><a [routerLink]="[ '/welcome' ]">Home</a></span>
       </button>
       <button mat-menu-item>
         <mat-icon>people_outline</mat-icon>
@@ -17,11 +17,16 @@
         <span>Let's talk</span>
       </button>
       <button mat-menu-item>
+          <mat-icon>dashboard</mat-icon>
+          <span><a [routerLink]="[ '/dashboard']">Dashboard</a></span>
+        </button>
+      <button mat-menu-item>
         <mat-icon>exit_to_app</mat-icon>
         <span>Logout</span>
       </button>
     </mat-menu>
   </span>
-  <span class="fill-remaining-space">Café</span>
+  <span class="fill-remaining-space"><a  style="color:inherit; text-decoration: none;" [routerLink]="[ '/welcome']">Café</a></span>
+  
   
 </mat-toolbar>

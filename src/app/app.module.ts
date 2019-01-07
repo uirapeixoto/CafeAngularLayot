@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRouters } from './app.routes';
 import { DataService } from './data/data.service';
 import { FormsModule } from '@angular/forms';
+import { PostModule } from './post/post.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     FormsModule, 
     MaterialModule,
-    AppRouters
+    AppRouters,
+    PostModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

@@ -6,6 +6,7 @@ import { NovaMesa } from '../shared/models/novamesa.model';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
+import { Mesa } from '../shared/models/mesa.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +14,13 @@ import 'rxjs/add/observable/throw';
 export class MesaService {
 
   mesaUrl: string;
-    novamesa: NovaMesa;
+  novamesa: NovaMesa;
+  mesa: Mesa;
 
     constructor(private http: Http, @Inject('BASE_URL') baseUrl: string) {
         this.mesaUrl = 'http://localhost:5200/api/Mesa/';
         this.novamesa = new NovaMesa();
+        this.mesa = new Mesa();
     }
 
     obterMesasAbertas() {

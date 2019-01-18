@@ -1,7 +1,8 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { Http } from '@angular/http';
+import { Component, OnInit, Input, Injectable } from '@angular/core';
+import { Http, HttpModule } from '@angular/http';
+
+import { MesaService } from '../mesa.service';
 import { Mesa } from 'src/app/shared/models/mesa.model';
-import { Garcom } from 'src/app/shared/models/garcom.model';
 
 @Component({
   selector: 'app-mesa-abertas',
@@ -10,15 +11,12 @@ import { Garcom } from 'src/app/shared/models/garcom.model';
 })
 export class MesaAbertasComponent implements OnInit {
 
-  public mesas: Mesa[];
-  public Garom: Garcom;
-  
-  constructor(http: Http, @Inject('BASE_URL') baseUrl: string) {
-        http.get('http://localhost:5200/api/Mesa/MesasAbertas').subscribe(result => {
-            this.mesas = result.json() as Mesa[];
-        }, error => console.error(error));
-    }
-  ngOnInit() {
-  }
+  mesas: Mesa[];
 
+  constructor(private service: MesaService) { }
+
+  ngOnInit() {
+    this.service.obterMesasAbertas().subscribe(mesas => this.mesas = mesas);
+    debugger
+  }
 }

@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8">
-            <a class="btn btn-lg btn-default" *ngFor="let mesa of mesas" [routerLink]="['/mesa-status', mesa.id]">
+            <a class="btn btn-lg btn-default" *ngFor="let mesa of mesas" >
                 <div class="col-lg-2">
                     <div class="right small text-left"><small>{{ mesa.garcom.nome}}</small></div>
                     <div class="left input-lg text-capitalize"><b>{{ mesa.numMesa}}</b></div>
@@ -23,7 +23,7 @@
         </div>
         <div class="col-lg-12">
             <div class="left" style="float:left">
-                <mesa-abrir-form></mesa-abrir-form>
+                <app-mesa-abrir></app-mesa-abrir>
             </div>
         </div>
     </div>

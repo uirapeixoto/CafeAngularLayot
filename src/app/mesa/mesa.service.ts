@@ -7,6 +7,8 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import { Mesa } from '../shared/models/mesa.model';
+import { APP_API } from '../app.api';
+import { MesaStatus } from '../shared/models/mesaStatus.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,15 +19,15 @@ export class MesaService {
   novamesa: NovaMesa;
   mesa: Mesa;
 
-    constructor(private http: Http, @Inject('BASE_URL') baseUrl: string) {
-        this.mesaUrl = 'http://localhost:5200/api/Mesa/';
+    constructor(private http: Http) {
+        this.mesaUrl = '${APP_API}+/Mesa/';
         this.novamesa = new NovaMesa();
         this.mesa = new Mesa();
     }
 
-    obterMesasAbertas() {
-        return this.http.get(this.mesaUrl + '/MesasAbertas')
-            .map((response: Response) => response.json())
+    obterMesasAbertas(): Observable<Mesa[]> {
+        return this.http.get( APP_API +'/Mesa/MesasAbertas')
+            .map(response => response.json())
             .catch(this.errorHandler);
     }
 
@@ -33,6 +35,12 @@ export class MesaService {
 
         return this.http.post(this.mesaUrl + '/abrirnovamesa', mesa)
             .map((response: Response) => response.json())
+            .catch(this.errorHandler);
+    }
+
+    obterMesaStatus(id: number): Observable<MesaStatus>{
+        return this.http.get('${APP_API}/Mesa/MesaStaus/'+ id)
+            .map(response => response.json())
             .catch(this.errorHandler);
     }
 

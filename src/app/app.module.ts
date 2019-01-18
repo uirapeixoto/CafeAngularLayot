@@ -15,6 +15,7 @@ import { AppRouters } from './app.routes';
 import { DataService } from './data/data.service';
 import { FormsModule } from '@angular/forms';
 import { PostModule } from './post/post.module';
+import { MesaModule } from './mesa/mesa.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PostModule } from './post/post.module';
     FormsModule, 
     MaterialModule,
     AppRouters,
-    PostModule
+    PostModule,
+    MesaModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

@@ -4,7 +4,7 @@ export class MesaStatus
 {
     mesaId: number;
     numMesa: number;
-    pedidsAServir?: PedidoItem;
+    pedidosAServir?: PedidoItem;
     pedidosEmPreparacao: PedidoItem;
     pedidosServidos: PedidoItem;
 }

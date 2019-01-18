@@ -14,7 +14,6 @@ import { MesaService } from '../mesa.service';
 @Injectable()
 export class MesaStatusComponent implements OnInit {
 
-  private _Url = 'http://localhost:4200/api/Mesa/Status/';
   public mesaStatus: MesaStatus;
   id: number;
 

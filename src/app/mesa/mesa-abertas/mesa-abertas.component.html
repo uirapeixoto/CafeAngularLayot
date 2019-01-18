@@ -1,36 +1,33 @@
-<h2>Mesas</h2>
-
-<p *ngIf="!mesas"><em>Loading...</em></p>
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8">
-            <a class="btn btn-lg btn-default" *ngFor="let mesa of mesas" >
-                <div class="col-lg-2">
-                    <div class="right small text-left"><small>{{ mesa.garcom.nome}}</small></div>
-                    <div class="left input-lg text-capitalize"><b>{{ mesa.numMesa}}</b></div>
-                    <div class="right small text-left"><small>{{ mesa.dataServico}}</small></div>
-                </div>
-            </a>
+<div>
+    <br>
+    <div class="container">
+      <div class="container">
+        <div fxLayout="column" fxLayoutGap="20px" fxLayout.gt-md="row" fxLayoutAlign="space-around center" class="content">
+          <div class="blocks">
+            <button button="submit" mat-raised-button color="primary" (click)="openDialog()">
+              <mat-icon>add</mat-icon> Add Mesa
+            </button>
+          </div>
         </div>
+      </div>
+      <br>
+      <div class="container">
+        <div fxLayout="row" fxLayoutAlign="center center" class="content">
+          <mat-card class="card">
+            <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+              <h4>Mesas Abertas</h4>
+            </mat-card-title>
+            <mat-card-content>
+                  <a class="example-small-box mat-elevation-z4" *ngFor="let mesa of mesas" [routerLink]="['status', mesa.id]" >
+                      <div class="text-center">
+                          <div class="right small text-left"><small>{{ mesa.garcom.nome }}</small></div>
+                          <div class="left input-lg text-capitalize"><b>{{ mesa.numMesa }}</b></div>
+                          <div class="right small text-left"><small>{{ mesa.dataServico }}</small></div>
+                       </div>
+                  </a>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
     </div>
-    <hr />
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="left" style="float:left">
-                <a href="#" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i> Adicionar Mesa</a>
-            </div>
-        </div>
-        <div class="col-lg-12">
-            <div class="left" style="float:left">
-                <app-mesa-abrir></app-mesa-abrir>
-            </div>
-        </div>
-    </div>
-    <hr />
-    <div class="row">
-        <div class="col-lg-12">
-
-        </div>
-    </div>
-</div>
+  </div>

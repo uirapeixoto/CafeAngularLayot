@@ -17,6 +17,5 @@ export class MesaAbertasComponent implements OnInit {
 
   ngOnInit() {
     this.service.obterMesasAbertas().subscribe(mesas => this.mesas = mesas);
-    debugger
   }
 }

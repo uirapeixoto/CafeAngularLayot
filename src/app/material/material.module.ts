@@ -12,7 +12,9 @@ import {
   MatTabsModule,
   MatMenuModule,
   MatInputModule,
-  MatSelectModule
+  MatSelectModule,
+  MatChip,
+  MatChipsModule
 } from '@angular/material';
 
 @NgModule({
@@ -25,6 +27,7 @@ import {
     MatListModule,
     MatDialogModule,
     MatCardModule,
+    MatChipsModule,
     MatButtonModule,
     MatTableModule,
     MatTabsModule,
@@ -39,6 +42,7 @@ import {
     MatIconModule,
     MatListModule,
     MatCardModule,
+    MatChipsModule,
     MatButtonModule,
     MatTableModule,
     MatTabsModule,

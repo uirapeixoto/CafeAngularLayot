@@ -39,7 +39,7 @@ export class MesaService {
     }
 
     obterMesaStatus(id: number): Observable<MesaStatus>{
-        return this.http.get('${APP_API}/Mesa/MesaStaus/'+ id)
+        return this.http.get(APP_API +'/Mesa/Status/'+ id)
             .map(response => response.json())
             .catch(this.errorHandler);
     }

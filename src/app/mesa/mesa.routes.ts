@@ -10,9 +10,10 @@ const routes: Routes = [
         path: 'mesa', 
         children: [
             { path: '', component: MesaAbertasComponent },
-            { path: 'status', component: MesaStatusComponent },
+            { path: 'status/:id', component: MesaStatusComponent },
             { path: 'abrir', component: MesaAbrirComponent },
             { path: 'pedido', component: MesaPedidoComponent },
+            { path: 'abertas', component: MesaAbertasComponent },
         ]
     },
 

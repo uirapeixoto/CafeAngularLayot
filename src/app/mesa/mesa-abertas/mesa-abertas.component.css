@@ -18,11 +18,15 @@ a {
   .example-small-box {
     height: 100px;
     width: 100px;
+    display: flex;
+    flex: 1; /*grow*/
+    cursor: pointer;
   }
   
   .example-large-box {
     height: 300px;
     width: 300px;
+    
   }
 
   .text-center, a{

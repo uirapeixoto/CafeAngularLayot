@@ -18,13 +18,13 @@
               <h4>Mesas Abertas</h4>
             </mat-card-title>
             <mat-card-content>
-                  <a class="example-small-box mat-elevation-z4" *ngFor="let mesa of mesas" [routerLink]="['status', mesa.id]" >
+                  <div class="example-small-box mat-elevation-z4" *ngFor="let mesa of mesas" [routerLink]="['status', mesa.id]" >
                       <div class="text-center">
                           <div class="right small text-left"><small>{{ mesa.garcom.nome }}</small></div>
                           <div class="left input-lg text-capitalize"><b>{{ mesa.numMesa }}</b></div>
                           <div class="right small text-left"><small>{{ mesa.dataServico }}</small></div>
                        </div>
-                  </a>
+                  </div>
             </mat-card-content>
           </mat-card>
         </div>

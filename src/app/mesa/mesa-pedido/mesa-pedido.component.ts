@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, EventEmitter } from '@angular/core';
+import { MesaService } from '../mesa.service';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-mesa-pedido',
@@ -7,7 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MesaPedidoComponent implements OnInit {
 
-  constructor() { }
+  public event: EventEmitter<any> = new EventEmitter();
+
+  constructor(
+    public dialogRef: MatDialogRef<MesaPedidoComponent>,
+    public service: MesaService,
+    @Inject(MAT_DIALOG_DATA) public data:any,
+
+  ) { }
+
+  onNoClick(): void{
+    this.dialogRef.close();
+  }
 
   ngOnInit() {
   }

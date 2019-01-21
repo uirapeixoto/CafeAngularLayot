@@ -9,6 +9,8 @@ import 'rxjs/add/observable/throw';
 import { Mesa } from '../shared/models/mesa.model';
 import { APP_API } from '../app.api';
 import { MesaStatus } from '../shared/models/mesaStatus.model';
+import { DataSource } from '@angular/cdk/table';
+import { MenuItem } from '../shared/models/menuItem.model';
 
 @Injectable({
   providedIn: 'root'
@@ -40,9 +42,21 @@ export class MesaService {
 
     obterMesaStatus(id: number): Observable<MesaStatus>{
         return this.http.get(APP_API +'/Mesa/Status/'+ id)
-            .map(response => response.json())
+            .map(response => response.json() as MesaStatus)
             .catch(this.errorHandler);
     }
+
+    obtertMenuItens(id:number): Observable<MenuItem>{
+        return this.http.get(APP_API + '/Pedidos' + id)
+        .map(response => response.json() as MenuItem)
+        .catch(this.errorHandler);
+    }
+
+    adicionarPedido(data) {
+
+    }
+
+    
 
     errorHandler(error: Response) {
         console.log(error);

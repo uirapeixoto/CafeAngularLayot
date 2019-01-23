@@ -1,3 +1,56 @@
-<p>
-  mesa-pedido works!
-</p>
+<div>
+    <br>
+    <div class="container">
+        <div class="container">
+            <div fxLayout="column" fxLayoutGap="20px" fxLayout.gt-md="row" fxLayoutAlign="space-around center" class="content">
+                <div class="blocks">
+                    <button button="submit" mat-raised-button color="primary">
+                        <mat-icon>add</mat-icon> Add Pedido
+                    </button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div fxLayout="row" fxLayoutAlign="center center" class="content">
+                <mat-card class="card">
+                    <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+                        <h4> Mesa {{ pedidos.numMesa }}</h4>
+                    </mat-card-title>
+                    <mat-card-content>
+                        <mat-tab-group>
+                            <mat-tab label="Bebidas"> 
+                              
+                                <table mat-table [dataSource]="dataSourceBebida">
+
+                                    <!-- Menu Column -->
+                                    <ng-container matColumnDef="menu">
+                                      <th mat-header-cell *matHeaderCellDef> No. Menu </th>
+                                      <td mat-cell *matCellDef="let element"> {{element.menuItem.numMenuItem}} </td>
+                                    </ng-container>
+                                
+                                    <!-- Descricao Column -->
+                                    <ng-container matColumnDef="descricao">
+                                      <th mat-header-cell *matHeaderCellDef> Descrição </th>
+                                      <td mat-cell *matCellDef="let element"> {{ element.menuItem.descricao }} </td>
+                                    </ng-container>
+                                
+                                    <!-- Quantidade Column -->
+                                    <ng-container matColumnDef="quantidade">
+                                      <th mat-header-cell *matHeaderCellDef> Quantidade </th>
+                                      <td mat-cell *matCellDef="let element"> {{ element.quantidade }} </td>
+                                    </ng-container>
+                                
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                  </table>
+
+                            </mat-tab>
+                            <mat-tab label="Cozinha"> Cozinha </mat-tab>
+                        </mat-tab-group>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

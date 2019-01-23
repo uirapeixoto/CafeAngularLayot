@@ -11,6 +11,8 @@ import { APP_API } from '../app.api';
 import { MesaStatus } from '../shared/models/mesaStatus.model';
 import { DataSource } from '@angular/cdk/table';
 import { MenuItem } from '../shared/models/menuItem.model';
+import { PedidoItem } from '../shared/models/pedidoItem.model';
+import { MesaPedidos } from '../shared/models/mesaPedidos.model';
 
 @Injectable({
   providedIn: 'root'
@@ -46,9 +48,9 @@ export class MesaService {
             .catch(this.errorHandler);
     }
 
-    obtertMenuItens(id:number): Observable<MenuItem>{
-        return this.http.get(APP_API + '/Pedidos' + id)
-        .map(response => response.json() as MenuItem)
+    obtertMenuItens(id:number): Observable<MesaPedidos>{
+        return this.http.get(APP_API + '/Pedidos/' + id)
+        .map(response => response.json() as MesaPedidos)
         .catch(this.errorHandler);
     }
 
